@@ -1,3 +1,4 @@
+<img width="622" height="1271" alt="image" src="https://github.com/user-attachments/assets/cdb59693-c0d5-461f-bb10-339e1c13ea81" />
 
 Rzut kostką
 
