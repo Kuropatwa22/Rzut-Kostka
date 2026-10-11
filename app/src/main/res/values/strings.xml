@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Rzut_Kostka</string>
+    <string name="app_name">Rzut kostka</string>
+    <string name="title">Rzut kostką</string>
+    <string name="start_result">?</string>
+    <string name="start_count">Liczba rzutów: 0</string>
+    <string name="roll">Rzuć kostką</string>
+    <string name="clear">Wyczyść wynik</string>
+    <string name="reset">Reset</string>
+    <string name="count">Liczba rzutów: %1$d</string>
+    <string name="error_no_rolls">Najpierw rzuć kostką!</string>
 </resources>
+
