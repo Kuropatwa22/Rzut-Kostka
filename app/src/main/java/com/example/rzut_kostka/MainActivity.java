@@ -1,24 +1,37 @@
 package com.example.rzut_kostka;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+
+    TextView tvResult;
+    TextView tvCount;
+
+    int liczbaRzutow = 0;
+    Random random = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        tvResult = findViewById(R.id.tvResult);
+        tvCount = findViewById(R.id.tvCount);
+    }
+
+    public void rzucKostke(View view) {
+        int wynik = random.nextInt(6) + 1;
+
+        liczbaRzutow++;
+
+        tvResult.setText(String.valueOf(wynik));
+        tvCount.setText(getString(R.string.count, liczbaRzutow));
     }
 }
+
