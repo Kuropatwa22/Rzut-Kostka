@@ -3,7 +3,7 @@ package com.example.rzut_kostka;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
@@ -23,6 +23,21 @@ public class MainActivity extends AppCompatActivity {
 
         tvResult = findViewById(R.id.tvResult);
         tvCount = findViewById(R.id.tvCount);
+        Button btnClear = findViewById(R.id.btnClear);
+        Button btnReset = findViewById(R.id.btnReset);
+
+        View.OnClickListener listener = v -> {
+            if (v.getId() == R.id.btnClear) {
+                tvResult.setText("");
+            } else {
+                liczbaRzutow = 0;
+                tvResult.setText(R.string.start_result);
+                tvCount.setText(getString(R.string.count, liczbaRzutow));
+            }
+        };
+
+        btnClear.setOnClickListener(listener);
+        btnReset.setOnClickListener(listener);
     }
 
     public void rzucKostke(View view) {
