@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
-
+import android.widget.Toast;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,7 +28,12 @@ public class MainActivity extends AppCompatActivity {
 
         View.OnClickListener listener = v -> {
             if (v.getId() == R.id.btnClear) {
-                tvResult.setText("");
+                if (liczbaRzutow == 0) {
+                    Toast.makeText(this, R.string.error_no_rolls,
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    tvResult.setText("");
+                }
             } else {
                 liczbaRzutow = 0;
                 tvResult.setText(R.string.start_result);
